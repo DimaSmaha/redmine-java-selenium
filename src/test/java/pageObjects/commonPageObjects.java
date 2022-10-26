@@ -3,6 +3,7 @@ package pageObjects;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -32,6 +33,8 @@ public class commonPageObjects {
          WebDriverManager.chromedriver().setup();
          driver = new ChromeDriver();
          driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+         Dimension dimension = new Dimension(1248, 968);
+         driver.manage().window().setSize(dimension);
      }
      public void finish(){
          driver.quit();
