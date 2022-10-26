@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -65,4 +66,10 @@ public class commonPageObjects {
      assertions.assertEquals(text,elementText);
     }
 
+    public void selectDropdownValue(By element,String value){
+      WebElement dropdownElement = driver.findElement(element);
+      dropdownElement.click();
+      Select select = new Select(dropdownElement);
+      select.selectByValue(value);
+    }
 }
