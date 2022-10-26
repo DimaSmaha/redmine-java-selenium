@@ -57,6 +57,9 @@ public class commonPageObjects {
      public void isElementVisible(By element){
        new WebDriverWait(driver,Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOfElementLocated(element));
      }
-
+    public void checkElementText(By element,String text){
+     String elementText = driver.findElement(element).getText();
+     assertions.assertEquals(text,elementText);
+    }
 
 }
