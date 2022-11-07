@@ -72,4 +72,8 @@ public class commonPageObjects {
       Select select = new Select(dropdownElement);
       select.selectByValue(value);
     }
+
+    public void goBrowserBack(){
+         driver.navigate().back();
+    }
 }
