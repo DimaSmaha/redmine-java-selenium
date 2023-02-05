@@ -76,4 +76,12 @@ public class commonPageObjects {
     public void goBrowserBack(){
          driver.navigate().back();
     }
+
+    /// implicit wait, just stops the driver for x amount of seconds
+    //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+    /// explicit wait (clever wait), which waits until some element will be clickable/visible or any other stuff
+    /// does not affect the whole driver instance
+    //WebDriverWait wait = new WebDriverWait(driver, 10);
+    // element = wait.until(ExpectedConditions.elementToBeClickable(By.id("element-id")));
 }
