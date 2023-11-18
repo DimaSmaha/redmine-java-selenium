@@ -31,7 +31,7 @@ public class commonPageObjects {
      public Assertions assertions;
 
      public void start(){
-         WebDriverManager.chromedriver().setup();
+         WebDriverManager.chromedriver().clearDriverCache().setup();
          driver = new ChromeDriver();
          driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
          Dimension dimension = new Dimension(1248, 968);
