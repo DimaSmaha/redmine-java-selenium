@@ -2,14 +2,16 @@ package pageObjects;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 import java.util.Random;
 
@@ -30,9 +32,11 @@ public class commonPageObjects {
      public WebDriver driver;
      public Assertions assertions;
 
-     public void start(){
+     public void start() throws MalformedURLException {
          WebDriverManager.chromedriver().clearDriverCache().setup();
          driver = new ChromeDriver();
+
+
          driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
          Dimension dimension = new Dimension(1248, 968);
          driver.manage().window().setSize(dimension);
