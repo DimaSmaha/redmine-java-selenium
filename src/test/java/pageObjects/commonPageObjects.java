@@ -34,9 +34,10 @@ public class commonPageObjects {
 
      public void start() throws MalformedURLException {
          WebDriverManager.chromedriver().clearDriverCache().setup();
-         driver = new ChromeDriver();
-
-
+         DesiredCapabilities dc = new DesiredCapabilities();
+         dc.setBrowserName("chrome");
+         driver = new RemoteWebDriver(new URL("http://localhost:4444"),dc);
+//         driver = new ChromeDriver();
          driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
          Dimension dimension = new Dimension(1248, 968);
          driver.manage().window().setSize(dimension);

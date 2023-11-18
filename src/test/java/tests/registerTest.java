@@ -4,6 +4,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.net.MalformedURLException;
+
 public class registerTest extends pageObjects.registerPageObjects{
 String username = getRandomString();
 String password = "qwerty";
@@ -12,7 +14,7 @@ String surname = "Dam";
 String email = getRandomString()+"@gmail.com";
 
     @BeforeEach
-    public void openBrowser(){
+    public void openBrowser() throws MalformedURLException {
         start();
     }
 
