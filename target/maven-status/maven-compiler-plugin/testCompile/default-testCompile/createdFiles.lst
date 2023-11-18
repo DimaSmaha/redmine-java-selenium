@@ -1,0 +1,11 @@
+pageObjects\registerPageObjects.class
+tests\dropdownTest.class
+pageObjects\issuesPageObjects.class
+pageObjects\homePageObjects.class
+pageObjects\loginPageObjects.class
+pageObjects\commonPageObjects.class
+tests\loginTest.class
+tests\redmineBookTest.class
+pageObjects\usersGuidePageObjects.class
+tests\registerTest.class
+tests\usersGuideTest.class
